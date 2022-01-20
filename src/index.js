@@ -2,13 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+function Task(props) {
+    console.log(props);
+    return(
+        <li className="tasks-item">{props.taskName}</li>
+    );
+}
+
 function TaskList(){
     return(
         <ul>
-            <li>Follow Edukasyon.ph on FB</li>
-            <li>Follow AWS Siklab Pilipinas on FB</li>
-            <li>Follow Zuitt Coding Bootcamp</li>
-            <li>ฅ^•ﻌ•^ฅ</li>
+            <Task taskName="Follow Edukasyon.ph on FB"/>
+            <Task taskName="Follow AWS siklab Pilipinas on FB"/>
+            <Task taskName="Follow Zuitt Coding Bootcamp on FB"/>
+            <Task taskName="ฅ^•ﻌ•^ฅ"/>
         </ul>
     );
 }
