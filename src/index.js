@@ -10,12 +10,19 @@ function Task(props) {
 }
 
 function TaskList(){
+
+    const taskItemsList = [
+        "Follow Edukasyon.ph on FB",
+        "Follow AWS siklab Pilipinas on FB",
+        "Follow Zuitt Coding Bootcamp on FB",
+        "ฅ^•ﻌ•^ฅ",
+    ];
+
     return(
         <ul>
-            <Task taskName="Follow Edukasyon.ph on FB"/>
-            <Task taskName="Follow AWS siklab Pilipinas on FB"/>
-            <Task taskName="Follow Zuitt Coding Bootcamp on FB"/>
-            <Task taskName="ฅ^•ﻌ•^ฅ"/>
+            {taskItemsList.map((task, index) => {
+                return <Task key={index} taskName={task}/>
+            })}
         </ul>
     );
 }
