@@ -3,19 +3,25 @@ import Task from "./Task";
 
 function TaskList(){
 
-    const taskItemsList = [
-        "Follow Edukasyon.ph on FB",
-        "Follow AWS siklab Pilipinas on FB",
-        "Follow Zuitt Coding Bootcamp on FB",
-        "ฅ^•ﻌ•^ฅ",
-    ];
+        const [taskItemsList, setTaskItemList] = useState ([
+            "Follow Edukasyon.ph on FB",
+            "Follow AWS siklab Pilipinas on FB",
+            "Follow Zuitt Coding Bootcamp on FB",
+            "ฅ^•ﻌ•^ฅ",    
+        ]);
+      
 
     const [taskValue, setTaskValue] = useState("Just another task")
     console.log("TaskValue>> ", taskValue)
 
     const inputChangeHandler = (e) => {
         setTaskValue(e.target.value)
-    }
+    };
+
+    const addTaskHandler = (e) => {
+        setTaskItemList([taskValue, ...taskItemsList]);
+        setTaskValue("");
+    };
 
     return(
         <div>
@@ -24,6 +30,8 @@ function TaskList(){
                 className="task-input" 
                 placeholder="Create a New Task"
                 onChange={inputChangeHandler}
+                onBlur = {addTaskHandler}
+                value = {taskValue}
             />
         
             <ul>
