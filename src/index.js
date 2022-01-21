@@ -1,37 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import TaskList from "./components/TaskList";
 
-function Task(props) {
-    console.log(props);
-    return(
-        <li className="tasks-item">{props.taskName}</li>
-    );
-}
-
-function TaskList(){
-
-    const taskItemsList = [
-        "Follow Edukasyon.ph on FB",
-        "Follow AWS siklab Pilipinas on FB",
-        "Follow Zuitt Coding Bootcamp on FB",
-        "ฅ^•ﻌ•^ฅ",
-    ];
-
-    return(
-        <div>
-
-            <input className="task-input" />
-        
-            <ul>
-                {taskItemsList.map((task, index) => {
-                    return <Task key={index} taskName={task}/>
-                })}
-            </ul>
-
-        </div>
-    );
-}
 
 function App(){
 
